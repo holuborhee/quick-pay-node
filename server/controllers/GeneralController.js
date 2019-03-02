@@ -14,6 +14,13 @@ class GeneralController {
     return res.send({ isSuccessful, data });
   }
 
+  static async getAllTransfers(req, res) {
+    const { accountNumber, bankCode } = req.query;
+    const response = await Api.fetch('GET', `/transfer`);
+    const { isSuccessful, data } = response;
+    return res.send({ isSuccessful, data });
+  }
+
 
   static async performTransfer(req, res) {
     const { transfers, transferFrom='CARD' } = req.body;
