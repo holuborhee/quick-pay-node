@@ -22,6 +22,7 @@ class Api {
       }
     } catch (error) {
       ({ response } = error);
+      console.log(response)
       console.log(`Error fecthing ${url} - ${error}`);
     }
 

@@ -32,6 +32,7 @@ app.get('/banks', GeneralController.getAllBanks);
 app.get('/resolve_account', GeneralController.resolveAccountNumber);
 app.post('/suppliers', SupplierController.create);
 app.get('/suppliers', SupplierController.list);
+app.post('/bulk_transfer', GeneralController.performTransfer);
 
 app.get('/', (req, res) => {
   res.send({ message: 'success' });
