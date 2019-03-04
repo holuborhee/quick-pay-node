@@ -28,7 +28,8 @@ class GeneralController {
     let charged, sum=0;
     
     transfers.forEach(transfer => {
-      sum += transfer.amount;
+      // Multiplying amount by 100 because amount sent was in Naira
+      sum += (transfer.amount * 100);
     })
 
     switch(transferFrom){
